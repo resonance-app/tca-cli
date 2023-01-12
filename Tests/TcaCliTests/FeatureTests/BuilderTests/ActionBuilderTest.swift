@@ -18,6 +18,7 @@ final class ActionBuilderTest: XCTestCase {
         let string = builder.source.buildSyntax(format: format).description
         let expected = """
         
+        import Foundation
         enum TestAction: Equatable {
         }
         """

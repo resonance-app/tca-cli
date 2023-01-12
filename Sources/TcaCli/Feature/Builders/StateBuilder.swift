@@ -14,6 +14,10 @@ struct StateBuilder: NamedSourceBuilder {
     
     var source: SourceFile {
         SourceFile {
+            ImportDecl {
+                AccessPathComponent(name: .identifier("Foundation"))
+            }
+            
             StructDecl(
                 identifier: name,
                 inheritanceClause: TypeInheritanceClause {

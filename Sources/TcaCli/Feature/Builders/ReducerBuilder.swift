@@ -87,6 +87,10 @@ struct ReducerBuilder: NamedSourceBuilder {
     
     var source: SourceFile {
         SourceFile {
+            ImportDecl {
+                AccessPathComponent(name: .identifier("ComposableArchitecture"))
+            }
+            
             StructDecl(
                 identifier: name,
                 inheritanceClause: TypeInheritanceClause {

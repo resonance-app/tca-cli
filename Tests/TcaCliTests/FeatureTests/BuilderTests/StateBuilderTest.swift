@@ -18,6 +18,7 @@ final class StateBuilderTest: XCTestCase {
         let string = builder.source.buildSyntax(format: format).description
         let expected = """
         
+        import Foundation
         struct TestState: Equatable {
         }
         """

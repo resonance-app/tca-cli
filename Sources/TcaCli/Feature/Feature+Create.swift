@@ -44,7 +44,7 @@ extension Feature {
             yearFormatter.calendar = .current
             
             let projectString = {
-                guard let project else {
+                guard let project = self.project else {
                     return ""
                 }
                 

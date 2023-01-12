@@ -14,6 +14,10 @@ struct ActionBuilder: NamedSourceBuilder {
     
     var source: SourceFile {
         SourceFile {
+            ImportDecl {
+                AccessPathComponent(name: .identifier("Foundation"))
+            }
+            
             EnumDecl(
                 identifier: name,
                 inheritanceClause: TypeInheritanceClause {

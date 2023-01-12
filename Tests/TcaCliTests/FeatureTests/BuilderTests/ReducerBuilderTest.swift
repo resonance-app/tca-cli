@@ -18,6 +18,7 @@ final class ReducerBuilderTest: XCTestCase {
         let string = builder.source.buildSyntax(format: format).description
         let expected = """
         
+        import ComposableArchitecture
         struct Test: ReducerProtocol{
             typealias State = TestState
             typealias Action = TestAction
