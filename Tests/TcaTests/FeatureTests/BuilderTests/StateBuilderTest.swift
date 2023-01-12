@@ -8,7 +8,7 @@
 import XCTest
 import SwiftSyntaxBuilder
 
-@testable import TcaCli
+@testable import Tca
 
 final class StateBuilderTest: XCTestCase {
 
