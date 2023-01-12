@@ -24,6 +24,9 @@ extension Feature {
         @Argument
         var name: String
         
+        @Flag
+        var withView = false
+        
         @Option
         var project: String?
         
@@ -83,7 +86,10 @@ extension Feature {
             }
             let featuresFolder = try Folder.current.subfolder(named: featuresFolderName)
             let featureFolder = try featuresFolder.createSubfolder(named: name)
-            let builders: [any NamedSourceBuilder.Type] = [StateBuilder.self, ActionBuilder.self, ReducerBuilder.self]
+            var builders: [any NamedSourceBuilder.Type] = [StateBuilder.self, ActionBuilder.self, ReducerBuilder.self]
+            if withView {
+                builders.append(ViewBuilder.self)
+            }
             
             for builderType in builders {
                 let builder = builderType.init(name: name)
@@ -92,7 +98,7 @@ extension Feature {
                     builder.source
                         .buildSyntax(
                             format: format,
-                            leadingTrivia: .blockComment(commentText(builderName: builder.name))
+                            leadingTrivia: .docBlockComment(commentText(builderName: builder.name))
                         )
                 )!
                 let formatter = SwiftFormatter(configuration: Self.config)

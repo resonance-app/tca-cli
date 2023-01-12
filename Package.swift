@@ -15,7 +15,7 @@ let package = Package(
     ],
     targets: [
         .executableTarget(
-            name: "TcaCli",
+            name: "Tca",
             dependencies: [
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
                 .product(name: "SwiftSyntaxBuilder", package: "swift-syntax"),
@@ -24,8 +24,8 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: "TcaCliTests",
-            dependencies: ["TcaCli"]
+            name: "TcaTests",
+            dependencies: ["Tca"]
         ),
     ]
 )

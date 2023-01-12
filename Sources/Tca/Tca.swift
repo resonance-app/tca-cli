@@ -1,7 +1,7 @@
 import ArgumentParser
 
 @main
-struct TcaCli: ParsableCommand {
+struct Tca: ParsableCommand {
     
     static var configuration = CommandConfiguration(
         commandName: "tca",
